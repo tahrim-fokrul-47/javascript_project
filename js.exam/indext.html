@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-main">
+                <h1>📝 Student Task Manager</h1>
+                <button id="theme-toggle" class="btn-theme">🌙 Dark Mode</button>
+            </div>
+            <div class="datetime-container">
+                <p><strong>Today:</strong></p>
+                <div id="live-date">-- --- ----</div>
+                <div id="live-time">00:00:00 AM</div>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <aside class="sidebar">
+                <div class="card stats-card">
+                    <h3>Task Statistics</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">Total Tasks: <span id="stat-total">0</span></div>
+                        <div class="stat-item completed-text">Completed: <span id="stat-completed">0</span></div>
+                        <div class="stat-item pending-text">Pending: <span id="stat-pending">0</span></div>
+                    </div>
+                </div>
+
+                <div class="card form-card">
+                    <h3>Add New Task</h3>
+                    <form id="task-form">
+                        <div class="form-group">
+                            <label for="task-title">Task Name</label>
+                            <input type="text" id="task-title" placeholder="e.g., Learn JavaScript" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="task-subject">Subject</label>
+                            <input type="text" id="task-subject" placeholder="e.g., Web Development" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="task-priority">Priority</label>
+                            <select id="task-priority">
+                                <option value="High">High</option>
+                                <option value="Medium" selected>Medium</option>
+                                <option value="Low">Low</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-submit">Add Task</button>
+                    </form>
+                </div>
+            </aside>
+
+            <main class="content-area">
+                <div class="filter-container">
+                    <button class="btn-filter active" data-filter="all">All</button>
+                    <button class="btn-filter" data-filter="completed">Completed</button>
+                    <button class="btn-filter" data-filter="pending">Pending</button>
+                </div>
+
+                <div id="tasks-container" class="tasks-list">
+                    </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
